@@ -1,0 +1,168 @@
+### =====================================================
+### JWT LOGIN - CREATE ACCESS & REFRESH TOKEN
+### =====================================================
+
+POST http://127.0.0.1:8000/token/
+Content-Type: application/json
+
+{
+    "username": "aparna",
+    "password": "aparna123"
+}
+
+
+### =====================================================
+### REFRESH ACCESS TOKEN
+### =====================================================
+
+POST http://127.0.0.1:8000/token/refresh/
+Content-Type: application/json
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5MDkzMDMzMSwiaWF0IjoxNzkwODQzOTMxLCJqdGkiOiJlNWYyZmMyNzcxNzU0MzM0YjQ0YzM2OGE1OTY1ZThhZiIsInVzZXJfaWQiOiIxIn0.Hi2rgW2DM4CKoLxrZQ1zGK2k-UMN4FNJX4VV_LSTj0s"
+}
+
+
+### =====================================================
+### GET ALL CLOTHING ITEMS
+### =====================================================
+
+GET http://127.0.0.1:8000/clothing/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkxMzU3OTU4LCJpYXQiOjE3OTEzNTc2NTgsImp0aSI6ImNhNzNjNjU1ZmY3NTQ5ZTNiMzJhY2NhZDc0MjRkMWMzIiwidXNlcl9pZCI6IjEifQ.QziCAmz3t7ZeBV_myrQ1gCyE16hvegpVURUIZ3h2JUo
+
+### =====================================================
+### GET ONE CLOTHING ITEM
+### =====================================================
+
+GET http://127.0.0.1:8000/clothing/2/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkxMzU3OTU4LCJpYXQiOjE3OTEzNTc2NTgsImp0aSI6ImNhNzNjNjU1ZmY3NTQ5ZTNiMzJhY2NhZDc0MjRkMWMzIiwidXNlcl9pZCI6IjEifQ.QziCAmz3t7ZeBV_myrQ1gCyE16hvegpVURUIZ3h2JUo
+
+### =====================================================
+### CREATE CLOTHING ITEM
+### =====================================================
+
+POST http://127.0.0.1:8000/clothing/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkxMzU3OTU4LCJpYXQiOjE3OTEzNTc2NTgsImp0aSI6ImNhNzNjNjU1ZmY3NTQ5ZTNiMzJhY2NhZDc0MjRkMWMzIiwidXNlcl9pZCI6IjEifQ.QziCAmz3t7ZeBV_myrQ1gCyE16hvegpVURUIZ3h2JUo
+
+{
+    "name": "White T-Shirt",
+    "category": "Top",
+    "color": "White",
+    "size": "M",
+    "brand": "Nike",
+    "season": "Summer",
+    "occasion": "Casual"
+}
+
+
+### =====================================================
+### CREATE ANOTHER CLOTHING ITEM
+### =====================================================
+
+POST http://127.0.0.1:8000/clothing/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkxMzU3OTU4LCJpYXQiOjE3OTEzNTc2NTgsImp0aSI6ImNhNzNjNjU1ZmY3NTQ5ZTNiMzJhY2NhZDc0MjRkMWMzIiwidXNlcl9pZCI6IjEifQ.QziCAmz3t7ZeBV_myrQ1gCyE16hvegpVURUIZ3h2JUo
+
+{
+    "name": "Blue Jeans",
+    "category": "Bottom",
+    "color": "Blue",
+    "size": "M",
+    "brand": "Levis",
+    "season": "All Season",
+    "occasion": "Casual"
+}
+
+
+### =====================================================
+### UPDATE CLOTHING ITEM
+### =====================================================
+
+PUT http://127.0.0.1:8000/clothing/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkxMzU3OTU4LCJpYXQiOjE3OTEzNTc2NTgsImp0aSI6ImNhNzNjNjU1ZmY3NTQ5ZTNiMzJhY2NhZDc0MjRkMWMzIiwidXNlcl9pZCI6IjEifQ.QziCAmz3t7ZeBV_myrQ1gCyE16hvegpVURUIZ3h2JUo
+Content-Type: application/json
+
+{
+    "name": "Blue Casual Jeans",
+    "category": "Bottom",
+    "color": "Blue",
+    "size": "M",
+    "brand": "Levis",
+    "season": "All Season",
+    "occasion": "College"
+}
+
+
+### =====================================================
+### DELETE CLOTHING ITEM
+### =====================================================
+
+DELETE http://127.0.0.1:8000/clothing/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkxMzU3OTU4LCJpYXQiOjE3OTEzNTc2NTgsImp0aSI6ImNhNzNjNjU1ZmY3NTQ5ZTNiMzJhY2NhZDc0MjRkMWMzIiwidXNlcl9pZCI6IjEifQ.QziCAmz3t7ZeBV_myrQ1gCyE16hvegpVURUIZ3h2JUo
+
+
+### =====================================================
+### GET ALL OUTFITS
+### =====================================================
+
+GET http://127.0.0.1:8000/outfits/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkxMzU3OTU4LCJpYXQiOjE3OTEzNTc2NTgsImp0aSI6ImNhNzNjNjU1ZmY3NTQ5ZTNiMzJhY2NhZDc0MjRkMWMzIiwidXNlcl9pZCI6IjEifQ.QziCAmz3t7ZeBV_myrQ1gCyE16hvegpVURUIZ3h2JUo
+
+### =====================================================
+### GET ONE OUTFIT
+### =====================================================
+
+GET http://127.0.0.1:8000/outfits/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkxMzU3OTU4LCJpYXQiOjE3OTEzNTc2NTgsImp0aSI6ImNhNzNjNjU1ZmY3NTQ5ZTNiMzJhY2NhZDc0MjRkMWMzIiwidXNlcl9pZCI6IjEifQ.QziCAmz3t7ZeBV_myrQ1gCyE16hvegpVURUIZ3h2JUo
+
+
+### =====================================================
+### CREATE OUTFIT
+### =====================================================
+
+POST http://127.0.0.1:8000/outfits/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkwODQzODE3LCJpYXQiOjE3OTA4NDM1MTcsImp0aSI6Ijc2ZGJjZGQ2YjNjYTRlYTVhMjFiZmRkYzYxZmNmYzhkIiwidXNlcl9pZCI6IjEifQ.rvGMFrwqYeilYFFIgZ2RdeaUSq9GACn4U5zt_jpWQ3Y
+Content-Type: application/json
+
+{
+    "name": "Casual Summer Look",
+    "description": "White T-shirt with blue jeans",
+    "clothing_items": [1, 2]
+}
+
+
+### =====================================================
+### CREATE ANOTHER OUTFIT
+### =====================================================
+
+POST http://127.0.0.1:8000/outfits/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkwODQzODE3LCJpYXQiOjE3OTA4NDM1MTcsImp0aSI6Ijc2ZGJjZGQ2YjNjYTRlYTVhMjFiZmRkYzYxZmNmYzhkIiwidXNlcl9pZCI6IjEifQ.rvGMFrwqYeilYFFIgZ2RdeaUSq9GACn4U5zt_jpWQ3Y
+Content-Type: application/json
+
+{
+    "name": "College Casual Look",
+    "description": "T-shirt, jeans and casual footwear",
+    "clothing_items": [1, 2]
+}
+
+
+### =====================================================
+### UPDATE OUTFIT
+### =====================================================
+
+PUT http://127.0.0.1:8000/outfits/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkwODQzODE3LCJpYXQiOjE3OTA4NDM1MTcsImp0aSI6Ijc2ZGJjZGQ2YjNjYTRlYTVhMjFiZmRkYzYxZmNmYzhkIiwidXNlcl9pZCI6IjEifQ.rvGMFrwqYeilYFFIgZ2RdeaUSq9GACn4U5zt_jpWQ3Y
+Content-Type: application/json
+
+{
+    "name": "Updated College Outfit",
+    "description": "T-shirt, jeans and casual footwear",
+    "clothing_items": [1, 2]
+}
+
+
+### =====================================================
+### DELETE OUTFIT
+### =====================================================
+
+DELETE http://127.0.0.1:8000/outfits/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzkwODQ0MjYwLCJpYXQiOjE3OTA4NDM5NjAsImp0aSI6IjA5NTY0ZTc2NDE1MjQ0YmY5YWM4MzFhZmFjN2ZiOTI2IiwidXNlcl9pZCI6IjEifQ.As0HIWM9Whpfs69Cx4uIaoa_fq48Ecf9ErY9FwC3z-k

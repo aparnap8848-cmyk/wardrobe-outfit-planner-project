@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Smart Wardrobe & Outfit Planner</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .navbar {
+            background: #ffd6e5;
+            color: black;
+            padding: 20px 40px;
+        }
+
+        .navbar h2 {
+            display: inline;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: pink;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+        }
+
+        .hero p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #222;
+            color: pink;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 50px;
+        }
+
+        .card {
+            background: pink;
+            width: 250px;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #222;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <div class="navbar">
+
+        <h2>Wardrobe Planner</h2>
+
+        <a href="/">Home</a>
+
+        <a href="/wardrobe/">Wardrobe</a>
+
+        <a href="/outfit-planner/">Outfits</a>
+
+        <a href="/admin/">Admin</a>
+
+    </div>
+
+
+    <!-- Hero Section -->
+
+    <div class="hero">
+
+        <h1>Smart Wardrobe & Outfit Planner</h1>
+
+        <p>
+            Organize your clothes and create your favorite outfit combinations.
+        </p>
+
+        <a class="button" href="/wardrobe/">
+            View My Wardrobe
+        </a>
+
+    </div>
+
+
+    <!-- Cards Section -->
+
+    <div class="cards">
+
+        <!-- Wardrobe Card -->
+
+        <div class="card">
+
+            <h3>My Wardrobe</h3>
+
+            <p>
+                Add, view, update and delete clothing items.
+            </p>
+
+            <a href="/wardrobe/">
+                Open Wardrobe
+            </a>
+
+        </div>
+
+
+        <!-- Outfit Planner Card -->
+
+        <div class="card">
+
+            <h3>Outfit Planner</h3>
+
+            <p>
+                Create and manage outfits using your clothes.
+            </p>
+
+            <a href="/outfit-planner/">
+                Open Outfits
+            </a>
+
+        </div>
+
+
+        <!-- Admin Card -->
+
+        <div class="card">
+
+            <h3>Admin</h3>
+
+            <p>
+                Manage your application through Django Admin.
+            </p>
+
+            <a href="/admin/">
+                Open Admin
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

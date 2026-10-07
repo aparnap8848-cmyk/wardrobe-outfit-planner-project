@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Outfit</title>
+</head>
+
+<body>
+
+    <h1>Create New Outfit</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>Outfit Name:</label>
+        <input type="text" name="name" required>
+
+        <br><br>
+
+        <label>Description:</label>
+        <textarea name="description"></textarea>
+
+        <br><br>
+
+        <h3>Select Clothing Items</h3>
+
+        {% for item in clothing_items %}
+
+            <input type="checkbox" name="clothing_items" value="{{ item.id }}">
+
+            {{ item.name }} - {{ item.category }}
+
+            <br>
+
+        {% endfor %}
+
+        <br>
+
+        <button type="submit">Create Outfit</button>
+
+    </form>
+
+    <br>
+
+    <a href="/outfit-planner/">
+        Back to Outfit Planner
+    </a>
+
+</body>
+</html>

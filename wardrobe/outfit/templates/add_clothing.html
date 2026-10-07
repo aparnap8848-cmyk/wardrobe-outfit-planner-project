@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Clothing</title>
+</head>
+
+<body>
+
+    <h1>Add Clothing</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label>Clothing Name:</label>
+        <input type="text" name="name" required>
+
+        <br><br>
+
+        <label>Category:</label>
+        <select name="category" required>
+            <option value="Top">Top</option>
+            <option value="Bottom">Bottom</option>
+            <option value="Dress">Dress</option>
+            <option value="Outerwear">Outerwear</option>
+            <option value="Footwear">Footwear</option>
+            <option value="Accessory">Accessory</option>
+        </select>
+
+        <br><br>
+
+        <label>Clothing Image:</label>
+        <input type="file" name="image" accept="image/*">
+
+        <br><br>
+
+        <label>Color:</label>
+        <input type="text" name="color" required>
+
+        <br><br>
+
+        <label>Size:</label>
+        <input type="text" name="size" required>
+
+        <br><br>
+
+        <label>Brand:</label>
+        <input type="text" name="brand">
+
+        <br><br>
+
+        <!-- SEASON -->
+        <label>Season:</label>
+        <br>
+
+        <input type="checkbox" name="season" value="Summer">
+        Summer
+
+        <input type="checkbox" name="season" value="Winter">
+        Winter
+
+        <input type="checkbox" name="season" value="Monsoon">
+        Monsoon
+
+        <input type="checkbox" name="season" value="All Season">
+        All Season
+
+        <br><br>
+
+        <!-- OCCASION -->
+        <label>Occasion:</label>
+        <br>
+
+        <input type="checkbox" name="occasion" value="Casual">
+        Casual
+
+        <input type="checkbox" name="occasion" value="Formal">
+        Formal
+
+        <input type="checkbox" name="occasion" value="Party">
+        Party
+
+        <input type="checkbox" name="occasion" value="College">
+        College
+
+        <input type="checkbox" name="occasion" value="Office">
+        Office
+
+        <input type="checkbox" name="occasion" value="Wedding">
+        Wedding
+
+        <input type="checkbox" name="occasion" value="Sports">
+        Sports
+
+        <input type="checkbox" name="occasion" value="Travel">
+        Travel
+
+        <br><br>
+
+        <button type="submit">Add Clothing</button>
+
+    </form>
+
+    <br>
+
+    <a href="/wardrobe/">Back to Wardrobe</a>
+
+</body>
+</html>
